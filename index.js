@@ -8,8 +8,8 @@ module.exports = { calculateTax, convertToUpperCase, findMaximum, isPalindrome, 
 
 function calculateTax(amount) {
     const taxRate = 0.10; // 10% tax
-    let taxValue = amount * taxRate;
-    return taxValue;
+    if (amount <= 0) return 0; // No tax for non-positive amounts
+    return amount * taxRate; // Calculate tax
 }
 
 function convertToUpperCase(text) {
@@ -34,12 +34,6 @@ function isPalindrome(word) {
 function calculateDiscountedPrice(originalPrice, discountPercentage) {
     let discountAmount = (originalPrice * discountPercentage) / 100;
     let finalPrice = originalPrice - discountAmount;
-    return finalPrice;  
+    return finalPrice < 0 ? 0 : finalPrice; // Ensure final price is not negative
 }
 
-alert(calculateTax(100)); // Should alert 10
-alert(convertToUpperCase("hello")); // Should alert "HELLO"
-alert(findMaximum(10, 20)); // Should alert 20
-alert(isPalindrome("racecar")); // Should alert true
-alert(calculateDiscountedPrice(200, 15)); // Should alert 170
-// This is required for the test to function properly
