@@ -36,3 +36,10 @@ function calculateDiscountedPrice(originalPrice, discountPercentage) {
     let finalPrice = originalPrice - discountAmount;
     return finalPrice;  
 }
+
+alert(calculateTax(100)); // Should alert 10
+alert(convertToUpperCase("hello")); // Should alert "HELLO"
+alert(findMaximum(10, 20)); // Should alert 20
+alert(isPalindrome("racecar")); // Should alert true
+alert(calculateDiscountedPrice(200, 15)); // Should alert 170
+// This is required for the test to function properly
